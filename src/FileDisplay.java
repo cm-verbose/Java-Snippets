@@ -1,4 +1,5 @@
 package src;
+
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -9,7 +10,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Optional;
 
-public class FileDisplay {
+final public class FileDisplay {
   final String fileDisplayFileName;
 
   public FileDisplay(String fileName) {
@@ -17,7 +18,7 @@ public class FileDisplay {
   }
 
   /** Handles program shutdown via CTRL + C */
-  private static class ShutDownMessageHandler extends Thread {
+  final private static class ShutDownMessageHandler extends Thread {
     public void run() {
       System.out.print("\033[H\033[2J");
       System.out.flush();
